@@ -1,0 +1,132 @@
+/* --- 1. IMPORT DES POLICES --- */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
+
+/* --- 2. CONFIGURATION GÉNÉRALE --- */
+body {
+    margin: 0;
+    padding: 0;
+    /* Dégradé Rouge Noël et Bordeaux */
+    background: linear-gradient(135deg, #8E0E00, #1F1C18);
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow: hidden; /* Empêche de scroller si la neige dépasse */
+}
+
+/* --- 3. LA CARTE (Effet Verre) --- */
+.card {
+    background: rgba(255, 255, 255, 0.1); /* Blanc transparent */
+    backdrop-filter: blur(10px); /* Flou derrière la carte */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    text-align: center;
+    max-width: 350px; /* Largeur max sur téléphone */
+    width: 90%;
+    position: relative;
+    z-index: 10; /* Pour être au-dessus de la neige */
+}
+
+/* --- 4. TEXTES ET TITRES --- */
+h1 {
+    font-family: 'Great Vibes', cursive; /* Police écriture manuscrite */
+    font-size: 2.5rem;
+    margin: 0;
+    line-height: 1.2;
+    color: #FFD700; /* Couleur Or */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.prenom {
+    font-size: 3rem;
+}
+
+.intro-text {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* --- 5. LA PHOTO --- */
+.photo-container {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    border-radius: 50%; /* Rend la photo ronde */
+    border: 4px solid #FFD700; /* Bordure Or */
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recadre l'image sans la déformer */
+}
+
+/* --- 6. LE CHRONO --- */
+.timer-box {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#chrono {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-top: 5px;
+}
+
+/* --- 7. BOUTON ET SURPRISE --- */
+.hidden-message {
+    display: none; /* Caché par défaut */
+    background: rgba(255, 255, 255, 0.9);
+    color: #8E0E00;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    animation: fadeIn 1s; /* Animation d'apparition */
+}
+
+.btn-surprise {
+    background: #FFD700;
+    color: #8E0E00;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.btn-surprise:hover {
+    transform: scale(1.1); /* Grossit un peu au survol */
+    background: white;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 8. FLOCONS DE NEIGE (Géré par JS mais stylisé ici) --- */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: white;
+    font-size: 1.5rem;
+    pointer-events: none; /* On ne peut pas cliquer dessus */
+    animation: fall linear forwards; /* Animation de chute */
+}
+
+@keyframes fall {
+    to { transform: translateY(105vh); } /* Tombe jusqu'en bas de l'écran */
+}

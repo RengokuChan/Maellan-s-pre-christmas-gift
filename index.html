@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Noël chéri !</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="card">
+        <h1>Joyeux Noël <br> <span class="prenom"></span></h1>
+        
+        <div class="photo-container">
+            <img src="photo.jpg" class="photo">
+        </div>
+
+        <p class="intro-text"> </p>
+
+        <div class="timer-box">
+            <p>On s'aime depuis :</p>
+            <div id="chrono">Calcul en cours...</div>
+        </div>
+
+    <div class="hidden-message" id="messageSecret" style="text-align: center;">
+    <p>
+        <strong>Joyeux Noël Maëllan.</strong><br><br>
+        Je ne sais pas prédire l’avenir.<br>
+        Mais je sais avec qui je veux le vivre. ❤️
+    </p>
+</div>
+
+        <button onclick="revealMessage()" class="btn-surprise">Clique ici</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
